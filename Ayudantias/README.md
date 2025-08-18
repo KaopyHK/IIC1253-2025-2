@@ -4,6 +4,7 @@
 
 2025-2
 - [Cápsula de introducción a LaTeX](https://www.youtube.com/watch?v=deI_EJfFQMo)
+- [Cápsula Modelamiento N-reinas y Grafos](https://www.youtube.com/watch?v=O9ujs2yTO0Y)
 
 2024-2
 - [Cápsula Solución Ayudantía 11 (Algoritmos)](https://www.youtube.com/watch?v=YF_fGgseSfI)
