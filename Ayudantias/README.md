@@ -12,3 +12,6 @@
 2024-1
 - [Cápsula Solución Ayudantía 10 (Teoría de Grafos)](https://www.youtube.com/watch?v=nx1YNfZakSM)
 - [Cápsula Solución Ayudantía de repaso examen](https://www.youtube.com/watch?v=zuS0uKUx398)
+
+2025-2
+- [Cápsula Modelamiento N-reinas y Grafos](https://youtu.be/O9ujs2yTO0Y?si=sY0wNcFX-yfX7zSg)
