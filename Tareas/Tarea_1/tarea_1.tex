@@ -150,11 +150,55 @@ Demuestre que el conjunto $\{\text{XOR}\}$ no es funcionalmente completo.
 
 % ---------------------- Inicio pregunta 2 ----------------------
 
-
 \newpage
 %\subsection*{Pregunta 2}
 
+% ---- Pregunta 2- (a)
+
 \subsubsection*{Pregunta \text{2 --- (a)}}
+
+El problema del \textit{cuadrado latino} de 4 x 4 se define como sigue. Tenemos un 
+tablero de 4 x 4 casillas. Algunas de las casillas están \textit{ocupadas}, vale decir, tienen un
+número entre $\{1, 2, 3, 4\}$. El resto de las casillas están \textit{libres}. El objetivo es verificar
+si existe una \textit{solución}, esto es, una forma de asignarle números entre $\{1, 2, 3, 4\}$ a las
+casillas libres, tal que en cada una de las 4 filas y en cada una de las 4 columnas, los números 
+que aparecen sean distintos. Por ejemplo, una posible instancia al problema puede ser el siguiente tablero:
+
+\[
+\begin{array}{|c|c|c|c|} \hline
+ &  & \textbf{1} &  \\ \hline
+ & \textbf{3} &  &  \\ \hline
+ &  &  & \textbf{4} \\ \hline
+\textbf{2} &  & \textbf{3} &  \\ \hline
+\end{array}
+\]
+Una posible solución es la siguiente:
+\[
+\begin{array}{|c|c|c|c|} \hline
+4 & 2 & \textbf{1} & 3 \\ \hline
+1 & \textbf{3} & 4 & 2 \\ \hline
+3 & 1 & 2 & \textbf{4} \\ \hline
+\textbf{2} & 4 & \textbf{3} & 1 \\ \hline
+\end{array}
+\]
+Por otra parte, el siguiente tablero \textbf{no} tiene solución (verifíquelo):
+\[
+\begin{array}{|c|c|c|c|} \hline
+ &  & \textbf{1} &  \\ \hline
+ & \textbf{3} &  & \textbf{1} \\ \hline
+ &  &  & \textbf{4} \\ \hline
+\textbf{2} &  & \textbf{3} &  \\ \hline
+\end{array}
+\]
+Para describir el conjunto de casillas ocupadas usaremos triples de la siguiente forma: un triple
+(\textit{i, j, k}), donde 1 $\leq$ \textit{i, j, k} $\leq$ 4, indica que las casillas en la fila \textit{i}
+y columna \textit{j} está ocupada con el número \textit{k}. Por ejemplo, las casillas ocupadas del primer
+ejemplo quedan descritas por:
+\[\{(1, 3, 1), (2, 2, 3), (3, 1, 4), (4, 2, 2), (4, 3, 3)\},\]
+mientras que en el segundo ejemplo quedan descritas por:
+\[\{(1, 3, 1), (2, 2, 3), (2, 4, 1), (3, 4, 4), (4, 1, 2), (4, 3, 3)\}.\]
+Dado un tablero con casillas ocupadas
+
 \rule{\linewidth}{0.4pt} % Línea del ancho del texto y grosor 0.4pt
 
 
