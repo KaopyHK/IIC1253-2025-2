@@ -88,15 +88,9 @@ IIC1253 --- Matemáticas Discretas \\}
 
 % ---- Pregunta 1 - (a)
 
-Encuentre una fórmula en CNF que sea equivalente a:
-\[ (p \rightarrow (q \rightarrow (r \to s))). \]
-Debe explicar claramente su desarrollo para obtener la fórmula.\\
-\rule{\linewidth}{0.2pt} % Línea del ancho del texto y grosor 0.4pt
-
-% --> Respuesta:
 Mediante demostración semántica o tablas de verdad sabemos que:
 \[ (A \rightarrow B \equiv \neg A \lor B )\]
-Lo cual indica que estas dos expresiones son lógicamente equivalentes, por lo tanto:
+Lo cual indica qe estas dos expresiones son lógicamente equivalentes, por lo tanto:
 \[ (p \rightarrow (q \rightarrow (\neg r \lor s)))\] % Paso 1
 \[ (p \rightarrow (\neg q \lor (\neg r \lor s)))\] % Paso 2
 \[ (\neg p \lor (\neg q \lor (\neg r \lor s)))\] % Paso 3
@@ -105,30 +99,33 @@ Por lo tanto, y debido a la propiedad asociativa del conectivo V (OR) nos queda:
 Por lo que se llega a una CNF, ya que la expresión anterior es una disyuntiva literal, es decir,
 una sola cláusula disyuntiva
 
+\rule{\linewidth}{0.4pt}
+
 % ---- Fin Pregunta 1 - (a)
 
 % ---- Pregunta 1 - (b)
 
 \subsubsection*{Pregunta \text{1 --- (b)}}
 
-Definimos el conectivo binario XOR según la siguiente tabla de verdad:
+Para demostrar que un conjunto de X funciones booleanas es funcionalmente completo, debemos demostrar
+que se puede, utilizando sólo estos conectivos, expresar cualquier otra función booleana.
+\\Para este ejercicio en particular nos es de utilidad saber que el conjunto $\{\neg, \rightarrow \}$ ya es funcionalmente completo.
+\\ Tabla verdad XOR: $(A \rightarrow B) = (\neg A \lor B)$
+\[XOR = (\neg p \land q) \lor (p \land \neg q)\]
+\[(\neg p \land q) \lor (p \land \neg q) = (\neg p \rightarrow \neg q) \rightarrow \neg(p \rightarrow q)\]
 \[
-\begin{array}{c|c|c}
-p & q & \text{XOR} \\ \hline 
-0 & 0 & 0 \\ 
-0 & 1 & 1 \\ 
-1 & 0 & 1 \\ 
-1 & 1 & 0 
+\begin{array}{c|c|c|c|c}
+p & q & XOR & (\neg p \land q) \lor (p \land \neg q) & (\neg p \rightarrow \neg q) \rightarrow \neg(p \rightarrow q)\\ \hline
+0 & 0 & 0 & 0 & 0\\
+1 & 0 & 1 & 1 & 1\\
+1 & 1 & 0 & 0 & 0\\
+0 & 1 & 1 & 1 & 0\\
 \end{array}
 \]
-Demuestre que el conjunto $\{\text{XOR}, \rightarrow\}$ es funcionalmente completo.
-\\ (Hint: Recuerde que el conjunto $\{\neg, \rightarrow \}$ es funcionalmente completo.)
-\\ \rule{\linewidth}{0.4pt} % Línea del ancho del texto y grosor 0.4pt
+Mediante lo anterior demostramos que con la funcion XOR podemos expresar los conectivos $(\neg, \lor)$,
+a su vez, con estos conectivos expresamos $\rightarrow$, por lo que queda demostrado que con $\{XOR, \rightarrow\}$
+se puede expresar $\{\neg, \rightarrow\}$ que ya es un conjunto funcionalmente completo.
 
-% --> Respuesta:
-
-
-\rule{\linewidth}{0.4pt}
 % ---- Fin Pregunta 1 - (b)
 
 % ---- Pregunta 1 - (c)
@@ -136,21 +133,15 @@ Demuestre que el conjunto $\{\text{XOR}, \rightarrow\}$ es funcionalmente comple
 \subsubsection*{Pregunta \text{1 --- (c)}}
 
 
-Demuestre que el conjunto $\{\text{XOR}\}$ no es funcionalmente completo.
-\\ (Hint: Demuestre que la fórmula $\{\neg p \}$ no se puede expresar utilizando sólo XOR)
-\\ \rule{\linewidth}{0.4pt}
-
-% --> Respuesta:
+\rule{\linewidth}{0.4pt}
 
 % ---- Fin Pregunta 1 - (c)
-
-
 % ---------------------- FIN Pregunta 1 ----------------------
 
 
 % ---------------------- Inicio pregunta 2 ----------------------
 
-\newpage
+% \newpage
 %\subsection*{Pregunta 2}
 
 % ---- Pregunta 2 - (a)
