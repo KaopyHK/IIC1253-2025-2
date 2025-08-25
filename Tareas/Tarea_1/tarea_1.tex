@@ -110,21 +110,34 @@ una sola cláusula disyuntiva
 Para demostrar que un conjunto de X funciones booleanas es funcionalmente completo, debemos demostrar
 que se puede, utilizando sólo estos conectivos, expresar cualquier otra función booleana.
 \\Para este ejercicio en particular nos es de utilidad saber que el conjunto $\{\neg, \rightarrow \}$ ya es funcionalmente completo.
-\\ Tabla verdad XOR: $(A \rightarrow B) = (\neg A \lor B)$
-\[XOR = (\neg p \land q) \lor (p \land \neg q)\]
-\[(\neg p \land q) \lor (p \land \neg q) = (\neg p \rightarrow \neg q) \rightarrow \neg(p \rightarrow q)\]
+\\ Debido a lo anterior debemos demostrar que con $\{XOR, \rightarrow\}$ podemos obtener $\{\neg\}$.
+La expresión a la que llegamos es la siguiente: $\neg p \equiv p XOR (p \rightarrow p)$, expresión que verificamos
+semánticamente mediante la tabla de verdad, tal que:
 \[
-\begin{array}{c|c|c|c|c}
-p & q & XOR & (\neg p \land q) \lor (p \land \neg q) & (\neg p \rightarrow \neg q) \rightarrow \neg(p \rightarrow q)\\ \hline
-0 & 0 & 0 & 0 & 0\\
-1 & 0 & 1 & 1 & 1\\
-1 & 1 & 0 & 0 & 0\\
-0 & 1 & 1 & 1 & 0\\
+\begin{array}{c|c|c}
+p & \neg p & p XOR(p \rightarrow p) \\ \hline
+1 & 0 & 0 \\
+0 & 1 & 1 \\
 \end{array}
 \]
-Mediante lo anterior demostramos que con la funcion XOR podemos expresar los conectivos $(\neg, \lor)$,
-a su vez, con estos conectivos expresamos $\rightarrow$, por lo que queda demostrado que con $\{XOR, \rightarrow\}$
-se puede expresar $\{\neg, \rightarrow\}$ que ya es un conjunto funcionalmente completo.
+Por lo que queda demostrado que con $\{XOR, \rightarrow\}$ se puede expresar $\{\neg\}$.
+\\Con esto resuelto, ahora debemos probar que con $\{\neg, \rightarrow \}$ podemos expresar $\{\lor\}$ y así finalmente concluir la completitud.
+Esto sirve ya que, por teorema de DNF's sabemos que para cada función booleana existe una DNF equivalente.
+\\ \\Según lo visto en clases, la expresión que nos sirve es $\neg p \lor q \equiv p \rightarrow q$, y lo demostraremos semánticamente:
+
+\[
+\begin{array}{c|c|c|c} 
+p & q & \neg p \lor q & p \rightarrow q \\ \hline
+1 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 1 \\
+\end{array}
+\]
+
+$\therefore$ Queda demostrado que el conjunto $\{XOR, \rightarrow \}$ es funcionalmente completo.
+
+\rule{\linewidth}{0.4pt}
 
 % ---- Fin Pregunta 1 - (b)
 
@@ -132,20 +145,32 @@ se puede expresar $\{\neg, \rightarrow\}$ que ya es un conjunto funcionalmente c
 
 \subsubsection*{Pregunta \text{1 --- (c)}}
 
+La pregunta es: ¿Es el conjunto $\{XOR\}$ funcionalmente completo?
+\\La respuesta es \textbf{No}, y aquí demostraremos el por qué:
+\\ \\ Valiéndose de la definición de conjunto funcionalmente completo de la pregunta anterior, sabemos qué es lo que debemos demostrar
+respecto al conectivo $XOR$. Lo haremos mediante una tabla de verdad
+
+\[
+\begin{array}{c|c|c|c}
+p & q & \neg p & p XOR q \\ \hline
+1 & 1 & 0 & 0 \\
+1 & 0 & 0 & 1 \\
+0 & 1 & 1 & 1 \\
+0 & 0 & 1 & 0 \\
+\end{array}
+\]
+
+\textbf{PENDIENTE DE ARGUMENTAR}
 
 \rule{\linewidth}{0.4pt}
 
 % ---- Fin Pregunta 1 - (c)
+
 % ---------------------- FIN Pregunta 1 ----------------------
 
-
 % ---------------------- Inicio pregunta 2 ----------------------
-
-% \newpage
-%\subsection*{Pregunta 2}
-
 % ---- Pregunta 2 - (a)
-
+\newpage
 \subsubsection*{Pregunta \text{2 --- (a)}}
 
 El problema del \textit{cuadrado latino} de 4 x 4 se define como sigue. Tenemos un 
